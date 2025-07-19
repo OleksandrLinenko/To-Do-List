@@ -4,8 +4,10 @@
  */
 package todolist;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import ui.Message;
 
 /**
  *
@@ -25,5 +27,43 @@ public class TaskList {
 
     public void addTask(Task task) {
         tasks.add(task);
+    }
+
+    public List<Task> getTasks(boolean all) {
+        List<Task> result = new ArrayList();
+        if (all != true) {
+            for (Task task : tasks) {
+                if (task.getState() == States.UNCOMPLETED) {
+                    result.add(task);
+                }
+            }
+        } else {
+            for (Task task : tasks) {
+                result.add(task);
+            }
+        }
+
+        return result;
+    }
+
+    public List<Task> getTasks(boolean all, LocalDate date) {
+        List<Task> result = new ArrayList();
+        if (all != true) {
+            for (Task task : tasks) {
+                if (task.getDate() == date) {
+                    if (task.getState() == States.UNCOMPLETED) {
+                        result.add(task);
+                    }
+                }
+            }
+        } else {
+            for (Task task : tasks) {
+                if (task.getDate() == date) {
+                    result.add(task);
+                }
+            }
+        }
+
+        return result;
     }
 }

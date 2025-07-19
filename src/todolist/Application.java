@@ -16,7 +16,7 @@ public class Application {
     private Application() {
 
     }
-    
+
     public void reset() {
         taskList.getTasks().clear();
     }

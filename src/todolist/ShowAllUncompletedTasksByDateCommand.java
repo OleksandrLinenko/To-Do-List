@@ -5,19 +5,19 @@
 package todolist;
 
 import ui.Ask;
-import ui.ShowCompTasksByDate;
+import ui.ShowTasks;
 
 /**
  *
  * @author oleksandrlinenko
  */
-public class ShowCompTasksByDateCommand {
+public class ShowAllUncompletedTasksByDateCommand {
 
-    public static ShowCompTasksByDateCommand create() {
-        return new ShowCompTasksByDateCommand();
+    public static ShowAllUncompletedTasksByDateCommand create() {
+        return new ShowAllUncompletedTasksByDateCommand();
     }
 
     public void handle() {
-        ShowCompTasksByDate.create().handle(Application.getInstance().getTaskList(), Ask.create().askDate());
+        ShowTasks.create().handle(Application.getInstance().getTaskList().getTasks(false, Ask.create().askDate()));
     }
 }
