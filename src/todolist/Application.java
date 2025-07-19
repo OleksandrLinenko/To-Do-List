@@ -4,9 +4,6 @@
  */
 package todolist;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author oleksandrlinenko
@@ -18,6 +15,10 @@ public class Application {
 
     private Application() {
 
+    }
+    
+    public void reset() {
+        taskList.getTasks().clear();
     }
 
     public static Application getInstance() {
