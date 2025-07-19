@@ -49,7 +49,7 @@ public class MainMenu {
     public static int getOption() {
         int option;
         try {
-            option = Ask.create().askInt("Pick the option");
+            option = Ask.create().askInt("Pick the option: ");
         } catch (InputMismatchException ex) {
             return - 1;
         }
