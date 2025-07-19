@@ -33,4 +33,8 @@ public class DateTasks {
     public void addTask(Task task) {
         tasks.add(task);
     }
+    
+    public String toString() {
+        return String.format("Date: %d.%d.%d", date.getDayOfMonth(), date.getMonth(), date.getYear());
+    }
 }

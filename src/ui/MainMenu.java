@@ -6,6 +6,7 @@ package ui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import todolist.ShowUncompTasksCommand;
 
 /**
  *
@@ -30,12 +31,13 @@ public class MainMenu {
 
     public static void menu() {
         Message.create().show("\nTo-Do-List\n");
-        Message.create().show("1. Show all uncompleted tasks\n");
-        Message.create().show("2. Show all uncompleted tasks from from specific date\n");
-        Message.create().show("3. Show all completed tasks\n");
-        Message.create().show("4. Show all uncompleted tasks from from specific date\n");
-        Message.create().show("5. Add new task\n");
-        Message.create().show("6. Mark uncompleted task as completed\n");
+        Message.create().show("1. Load new To-Do-List\n");
+        Message.create().show("2. Show all uncompleted tasks\n");
+        Message.create().show("3. Show all uncompleted tasks from from specific date\n");
+        Message.create().show("4. Show all completed tasks\n");
+        Message.create().show("5. Show all uncompleted tasks from from specific date\n");
+        Message.create().show("6. Add new task\n");
+        Message.create().show("7. Mark uncompleted task as completed\n");
         Message.create().show("0. End of program\n");
     }
 
@@ -56,14 +58,23 @@ public class MainMenu {
             case 0:
                 return true;
             case 1:
-
+                
                 break;
+            case 2:
+                ShowUncompTasks();
+                break;
+            case 3:
+                
 
             default:
                 Message.create().show("Undefined option");
         }
 
         return false;
+    }
+    
+    public static void ShowUncompTasks() {
+        ShowUncompTasksCommand.create().handle();
     }
 
 }
