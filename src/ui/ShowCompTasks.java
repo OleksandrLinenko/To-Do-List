@@ -4,23 +4,23 @@
  */
 package ui;
 
-import todolist.TaskList;
 import todolist.States;
 import todolist.Task;
+import todolist.TaskList;
 
 /**
  *
  * @author oleksandrlinenko
  */
-public class ShowUncompTasks {
+public class ShowCompTasks {
 
-    public static ShowUncompTasks create() {
-        return new ShowUncompTasks();
+    public static ShowCompTasks create() {
+        return new ShowCompTasks();
     }
 
     public void handle(TaskList taskList) {
         for (Task task : taskList.getTasks()) {
-            if (task.getState() == States.UNCOMPLETED) {
+            if (task.getState() == States.COMPLETED) {
                 Message.create().show(task.toString());
             }
         }

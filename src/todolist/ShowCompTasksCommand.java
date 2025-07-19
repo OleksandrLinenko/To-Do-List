@@ -4,19 +4,19 @@
  */
 package todolist;
 
-import ui.ShowUncompTasks;
+import ui.ShowCompTasks;
 
 /**
  *
  * @author oleksandrlinenko
  */
-public class ShowUncompTasksCommand {
+public class ShowCompTasksCommand {
 
-    public static ShowUncompTasksCommand create() {
-        return new ShowUncompTasksCommand();
+    public static ShowCompTasksCommand create() {
+        return new ShowCompTasksCommand();
     }
     
     public void handle() {
-        ShowUncompTasks.create().handle(Application.getInstance().getTaskList());
+        ShowCompTasks.create().handle(Application.getInstance().getTaskList());
     }
 }
