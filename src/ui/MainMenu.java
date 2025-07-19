@@ -81,5 +81,4 @@ public class MainMenu {
     public static void ShowUncompTasksByDate() {
         ShowUncompTasksByDateCommand.create().handle();
     }
-
 }
