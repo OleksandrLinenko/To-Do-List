@@ -4,8 +4,7 @@
  */
 package ui;
 
-import java.util.List;
-import todolist.DateTasks;
+import todolist.TaskList;
 import todolist.States;
 import todolist.Task;
 
@@ -18,15 +17,11 @@ public class ShowUncompTasks {
         return new ShowUncompTasks();
     }
     
-    public void handle(List<DateTasks> dateTasks) {
-        for(DateTasks dateTask : dateTasks) {
-            Message.create().show(dateTask.toString());
-            List<Task> tasks = dateTask.getTasks();
-            for(Task task : tasks) {
+    public void handle(TaskList taskList) {
+        for(Task task : taskList.getTasks()) {
                 if(task.getState() == States.UNCOMPLETED) {
                    Message.create().show(task.toString()); 
                 }
             }
         }
     }
- }

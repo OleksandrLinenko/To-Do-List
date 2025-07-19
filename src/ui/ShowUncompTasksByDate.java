@@ -5,8 +5,7 @@
 package ui;
 
 import java.time.LocalDate;
-import java.util.List;
-import todolist.DateTasks;
+import todolist.TaskList;
 import todolist.States;
 import todolist.Task;
 
@@ -20,15 +19,11 @@ public class ShowUncompTasksByDate {
         return new ShowUncompTasksByDate();
     }
 
-    public void handle(List<DateTasks> dateTasks, LocalDate date) {
-        for (DateTasks dateTask : dateTasks) {
-            if (dateTask.getDate() == date) {
-                Message.create().show(dateTask.toString());
-                List<Task> tasks = dateTask.getTasks();
-                for (Task task : tasks) {
-                    if (task.getState() == States.COMPLETED) {
-                        Message.create().show(task.toString());
-                    }
+    public void handle(TaskList taskList, LocalDate date) {
+        for (Task task : taskList.getTasks()) {
+            if (task.getDate() == date) {
+                if (task.getState() == States.UNCOMPLETED) {
+                    Message.create().show(task.toString());
                 }
             }
         }

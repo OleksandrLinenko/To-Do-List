@@ -4,6 +4,8 @@
  */
 package todolist;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author oleksandrlinenko
@@ -12,10 +14,12 @@ public class Task {
 
     private String note;
     private States state;
+    private LocalDate date;
 
-    public Task(String note, States state) {
+    public Task(String note, States state, LocalDate date) {
         this.note = note;
         this.state = state;
+        this.date = date;
     }
 
     public String getNote() {
@@ -26,8 +30,12 @@ public class Task {
         return state;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
     @Override
     public String toString() {
-        return String.format("%s %s\n", note, state.getState());
+        return String.format("%s %d.%d.%d %s\n", note, date.getDayOfMonth(), date.getMonth(), date.getYear(), state.getState());
     }
 }

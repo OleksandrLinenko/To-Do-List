@@ -17,6 +17,6 @@ public class ShowUncompTasksByDateCommand {
     }
     
     public void handle() {
-        ShowUncompTasksByDate.create().handle(Application.getInstance().getTasks(), Ask.create().askDate());
+        ShowUncompTasksByDate.create().handle(Application.getInstance().getTaskList(), Ask.create().askDate());
     }
 }
