@@ -4,7 +4,6 @@
  */
 package todolist;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,18 +11,12 @@ import java.util.List;
  *
  * @author oleksandrlinenko
  */
-public class DateTasks {
+public class TaskList {
 
-    LocalDate date;
     List<Task> tasks = new ArrayList();
 
-    public DateTasks(LocalDate date, List<Task> tasks) {
-        this.date = date;
+    public TaskList(List<Task> tasks) {
         this.tasks = tasks;
-    }
-
-    public LocalDate getDate() {
-        return date;
     }
 
     public List<Task> getTasks() {
@@ -32,9 +25,5 @@ public class DateTasks {
 
     public void addTask(Task task) {
         tasks.add(task);
-    }
-    
-    public String toString() {
-        return String.format("Date: %d.%d.%d", date.getDayOfMonth(), date.getMonth(), date.getYear());
     }
 }

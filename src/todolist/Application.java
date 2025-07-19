@@ -14,7 +14,7 @@ import java.util.List;
 public class Application {
 
     private static Application app = new Application();
-    private List<DateTasks> tasks = new ArrayList();
+    private TaskList taskList;
 
     private Application() {
 
@@ -24,8 +24,8 @@ public class Application {
         return app;
     }
 
-    public List<DateTasks> getTasks() {
-        return tasks;
+    public TaskList getTaskList() {
+        return taskList;
     }
 
 }

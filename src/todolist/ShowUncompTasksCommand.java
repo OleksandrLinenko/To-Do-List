@@ -16,6 +16,6 @@ public class ShowUncompTasksCommand {
     }
     
     public void handle() {
-        ShowUncompTasks.create().handle(Application.getInstance().getTasks());
+        ShowUncompTasks.create().handle(Application.getInstance().getTaskList());
     }
 }
