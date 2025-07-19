@@ -28,6 +28,16 @@ public class TaskList {
     public void addTask(Task task) {
         tasks.add(task);
     }
+    
+    public Task findTask(String note, LocalDate date) {
+        for(Task task : tasks) {
+            if(task.getNote().equals(note) || task.getDate() == date) {
+                return task;
+            }
+        }
+        
+        return null;
+    }
 
     public List<Task> getTasks(boolean all) {
         List<Task> result = new ArrayList();
