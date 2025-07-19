@@ -6,6 +6,8 @@ package ui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import todolist.AddTaskCommand;
+import todolist.SetTaskAsCompletedCommand;
 import todolist.ShowAllTasksByDateCommand;
 import todolist.ShowAllTasksCommand;
 import todolist.ShowAllUncompletedTasksByDateCommand;
@@ -45,10 +47,9 @@ public class MainMenu {
     }
 
     public static int getOption() {
-        Message.create().show("Pick the option: ");
         int option;
         try {
-            option = sc.nextInt();
+            option = Ask.create().askInt("Pick the option");
         } catch (InputMismatchException ex) {
             return - 1;
         }
@@ -75,6 +76,12 @@ public class MainMenu {
             case 5:
                 ShowAllUncompletedTasksByDate();
                 break;
+            case 6:
+                AddTask();
+                break;
+            case 7:
+                SetTaskAsCompleted();
+                break;
             default:
                 Message.create().show("Undefined option");
         }
@@ -96,5 +103,13 @@ public class MainMenu {
 
     public static void ShowAllUncompletedTasksByDate() {
         ShowAllUncompletedTasksByDateCommand.create().handle();
+    }
+
+    public static void AddTask() {
+        AddTaskCommand.create().handle();
+    }
+
+    public static void SetTaskAsCompleted() {
+        SetTaskAsCompletedCommand.create().handle();
     }
 }
