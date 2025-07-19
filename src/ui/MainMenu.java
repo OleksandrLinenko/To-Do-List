@@ -6,10 +6,10 @@ package ui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import todolist.ShowCompTasksByDateCommand;
-import todolist.ShowCompTasksCommand;
-import todolist.ShowUncompTasksByDateCommand;
-import todolist.ShowUncompTasksCommand;
+import todolist.ShowAllTasksByDateCommand;
+import todolist.ShowAllTasksCommand;
+import todolist.ShowAllUncompletedTasksByDateCommand;
+import todolist.ShowAllUncompletedTasksCommand;
 
 /**
  *
@@ -35,10 +35,10 @@ public class MainMenu {
     public static void menu() {
         Message.create().show("\nTo-Do-List\n");
         Message.create().show("1. Load new To-Do-List\n");
-        Message.create().show("2. Show all uncompleted tasks\n");
-        Message.create().show("3. Show all uncompleted tasks from from specific date\n");
-        Message.create().show("4. Show all completed tasks\n");
-        Message.create().show("5. Show all uncompleted tasks from from specific date\n");
+        Message.create().show("2. Show all tasks\n");
+        Message.create().show("3. Show all uncompleted tasks\n");
+        Message.create().show("4. Show all tasks from specific date\n");
+        Message.create().show("5. Show all uncompleted tasks from specific date\n");
         Message.create().show("6. Add new task\n");
         Message.create().show("7. Mark uncompleted task as completed\n");
         Message.create().show("0. End of program\n");
@@ -64,16 +64,16 @@ public class MainMenu {
 
                 break;
             case 2:
-                ShowUncompTasks();
+                ShowAllTasks();
                 break;
             case 3:
-                ShowUncompTasksByDate();
+                ShowAllUncompletedTasks();
                 break;
             case 4:
-                ShowCompTasks();
+                ShowAllTasksByDate();
                 break;
             case 5:
-                ShowCompTasksByDate();
+                ShowAllUncompletedTasksByDate();
                 break;
             default:
                 Message.create().show("Undefined option");
@@ -82,19 +82,19 @@ public class MainMenu {
         return false;
     }
 
-    public static void ShowUncompTasks() {
-        ShowUncompTasksCommand.create().handle();
+    public static void ShowAllTasks() {
+        ShowAllTasksCommand.create().handle();
     }
 
-    public static void ShowUncompTasksByDate() {
-        ShowUncompTasksByDateCommand.create().handle();
+    public static void ShowAllUncompletedTasks() {
+        ShowAllUncompletedTasksCommand.create().handle();
     }
-    
-    public static void ShowCompTasks() {
-        ShowCompTasksCommand.create().handle();
+
+    public static void ShowAllTasksByDate() {
+        ShowAllTasksByDateCommand.create().handle();
     }
-    
-    public static void ShowCompTasksByDate() {
-        ShowCompTasksByDateCommand.create().handle();
+
+    public static void ShowAllUncompletedTasksByDate() {
+        ShowAllUncompletedTasksByDateCommand.create().handle();
     }
 }
