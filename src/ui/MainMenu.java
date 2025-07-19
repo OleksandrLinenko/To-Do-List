@@ -6,6 +6,7 @@ package ui;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import todolist.ShowUncompTasksByDateCommand;
 import todolist.ShowUncompTasksCommand;
 
 /**
@@ -64,8 +65,8 @@ public class MainMenu {
                 ShowUncompTasks();
                 break;
             case 3:
-                
-
+                ShowUncompTasksByDate();
+                break;
             default:
                 Message.create().show("Undefined option");
         }
@@ -76,5 +77,8 @@ public class MainMenu {
     public static void ShowUncompTasks() {
         ShowUncompTasksCommand.create().handle();
     }
-
+    
+    public static void ShowUncompTasksByDate() {
+        ShowUncompTasksByDateCommand.create().handle();
+    }
 }
