@@ -24,6 +24,11 @@ public class Ask {
         return sc.nextInt();
     }
     
+    public String askPath() {
+        Message.create().show("Set path to file: ");
+        return sc.nextLine();
+    }
+    
     public String askNote() {
         Message.create().show("Write note text");
         return sc.nextLine();
