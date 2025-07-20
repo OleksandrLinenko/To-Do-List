@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/Application.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/SetTaskAsCompletedCommand.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/Data.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/LoadListCommand.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/ui/Ask.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/ToDoList.txt</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/Main.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/TaskList.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/States.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/todolist/Task.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/ui/Message.java</file>
+            <file>file:/Users/oleksandrlinenko/Documents/Projects/ToDoList/src/ui/MainMenu.java</file>
+        </group>
+    </open-files>
+</project-private>

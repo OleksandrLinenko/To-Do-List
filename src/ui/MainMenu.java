@@ -7,6 +7,7 @@ package ui;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import todolist.AddTaskCommand;
+import todolist.LoadListCommand;
 import todolist.SetTaskAsCompletedCommand;
 import todolist.ShowAllTasksByDateCommand;
 import todolist.ShowAllTasksCommand;
@@ -62,7 +63,7 @@ public class MainMenu {
             case 0:
                 return true;
             case 1:
-
+                LoadToDoList();
                 break;
             case 2:
                 ShowAllTasks();
@@ -87,6 +88,10 @@ public class MainMenu {
         }
 
         return false;
+    }
+    
+    public static void LoadToDoList() {
+        LoadListCommand.create().handle();
     }
 
     public static void ShowAllTasks() {
