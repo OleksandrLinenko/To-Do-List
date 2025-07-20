@@ -28,28 +28,28 @@ public class TaskList {
     public void addTask(Task task) {
         tasks.add(task);
     }
-    
+
     public Task findTask(String note, LocalDate date) {
-        for(Task task : tasks) {
-            if(task.getNote().equals(note) || task.getDate() == date) {
+        for (Task task : tasks) {
+            if (task.getNote().equals(note) || task.getDate() == date) {
                 return task;
             }
         }
-        
+
         return null;
     }
 
     public List<Task> getTasks(boolean all) {
         List<Task> result = new ArrayList();
-        if (all != true) {
+        if (all) {
+            for (Task task : tasks) {
+                result.add(task);
+            }
+        } else {
             for (Task task : tasks) {
                 if (task.getState() == States.UNCOMPLETED) {
                     result.add(task);
                 }
-            }
-        } else {
-            for (Task task : tasks) {
-                result.add(task);
             }
         }
 
@@ -58,17 +58,15 @@ public class TaskList {
 
     public List<Task> getTasks(boolean all, LocalDate date) {
         List<Task> result = new ArrayList();
-        if (all != true) {
+        if (all) {
             for (Task task : tasks) {
                 if (task.getDate() == date) {
-                    if (task.getState() == States.UNCOMPLETED) {
-                        result.add(task);
-                    }
+                    result.add(task);
                 }
             }
         } else {
             for (Task task : tasks) {
-                if (task.getDate() == date) {
+                if (task.getDate() == date || task.getState() == States.UNCOMPLETED) {
                     result.add(task);
                 }
             }
