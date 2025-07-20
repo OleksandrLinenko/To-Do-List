@@ -34,6 +34,11 @@ public class Task {
         return date;
     }
 
+    public void setState(States state) {
+        this.state = state;
+    }
+    
+
     @Override
     public String toString() {
         return String.format("%s %d.%d.%d %s\n", note, date.getDayOfMonth(), date.getMonth(), date.getYear(), state.getState());

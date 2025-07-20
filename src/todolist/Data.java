@@ -1,0 +1,46 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package todolist;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+
+/**
+ *
+ * @author oleksandrlinenko
+ */
+public class Data {
+
+    public static Data create() {
+        return new Data();
+    }
+
+    public void readData(String path) {
+        try (BufferedReader br = new BufferedReader(new FileReader(new File(path)))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] split = line.split(";");
+                String[] splitDate = split[0].split(".");
+                LocalDate date = LocalDate.of(
+                        Integer.parseInt(splitDate[0].trim()),
+                        Integer.parseInt(splitDate[1].trim()),
+                        Integer.parseInt(splitDate[2].trim())
+                );
+                States state;
+                if (split[2].equals("Completed")) {
+                    state = States.COMPLETED;
+                } else {
+                    state = States.UNCOMPLETED;
+                }
+                Application.getInstance().getTaskList().addTask(new Task(split[1], state, date));
+            }
+        } catch (IOException ex) {
+            System.err.println("Error while reading file");
+        }
+    }
+}
