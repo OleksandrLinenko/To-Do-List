@@ -7,7 +7,6 @@ package todolist;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import ui.Message;
 
 /**
  *
@@ -27,6 +26,10 @@ public class TaskList {
 
     public void addTask(Task task) {
         tasks.add(task);
+    }
+    
+    public void makeCompleted(Task task) {
+        task.setState(States.COMPLETED);
     }
 
     public Task findTask(String note, LocalDate date) {
