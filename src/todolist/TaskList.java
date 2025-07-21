@@ -16,20 +16,12 @@ public class TaskList {
 
     List<Task> tasks = new ArrayList();
 
-    public TaskList(List<Task> tasks) {
-        this.tasks = tasks;
-    }
-
     public List<Task> getTasks() {
         return tasks;
     }
 
     public void addTask(Task task) {
         tasks.add(task);
-    }
-    
-    public void makeCompleted(Task task) {
-        task.setState(States.COMPLETED);
     }
 
     public Task findTask(String note, LocalDate date) {
@@ -44,7 +36,7 @@ public class TaskList {
 
     public List<Task> getTasks(boolean all) {
         List<Task> result = new ArrayList();
-        if (all) {
+        if (all == true) {
             for (Task task : tasks) {
                 result.add(task);
             }
@@ -61,15 +53,15 @@ public class TaskList {
 
     public List<Task> getTasks(boolean all, LocalDate date) {
         List<Task> result = new ArrayList();
-        if (all) {
+        if (all == true) {
             for (Task task : tasks) {
-                if (task.getDate() == date) {
+                if (task.getDate().equals(date)) {
                     result.add(task);
                 }
             }
         } else {
             for (Task task : tasks) {
-                if (task.getDate() == date || task.getState() == States.UNCOMPLETED) {
+                if (task.getDate().equals(date) || task.getState() == States.UNCOMPLETED) {
                     result.add(task);
                 }
             }

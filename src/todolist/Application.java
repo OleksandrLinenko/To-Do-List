@@ -11,14 +11,10 @@ package todolist;
 public class Application {
 
     private static Application app = new Application();
-    private TaskList taskList;
+    private TaskList taskList = new TaskList();
 
     private Application() {
 
-    }
-
-    public void reset() {
-        taskList.getTasks().clear();
     }
 
     public static Application getInstance() {

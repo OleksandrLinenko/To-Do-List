@@ -48,9 +48,10 @@ public class MainMenu {
     }
 
     public static int getOption() {
+        Message.create().show("Pick the option: ");
         int option;
         try {
-            option = Ask.create().askInt("Pick the option: ");
+            option = sc.nextInt();
         } catch (InputMismatchException ex) {
             return - 1;
         }

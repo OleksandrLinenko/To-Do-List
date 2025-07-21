@@ -1,1 +1,11 @@
-20.7.2025;Do my homework;Completed
+21.7.2025;Do my math homework;Completed
+21.7.2025;Do my chemistry homework;Uncompleted
+21.7.2025;Do my PE homework;Uncompleted
+21.7.2025;Do my English homework;Completed
+26.7.2025;Wash the dishes;Completed
+26.7.2025;Do PE test;Uncompleted
+26.7.2025;Water flowers;Uncompleted
+30.7.2025;Send money;Uncompleted
+30.7.2025;Walk the dog;Completed
+30.7.2025;Wash the window;Uncompleted
+

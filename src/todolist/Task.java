@@ -17,6 +17,9 @@ public class Task {
     private LocalDate date;
 
     public Task(String note, States state, LocalDate date) {
+        if(note.isEmpty() || (state != States.COMPLETED && state != States.UNCOMPLETED) || date == null) {
+            throw new IllegalArgumentException("Illegal argument");
+        }
         this.note = note;
         this.state = state;
         this.date = date;
@@ -38,9 +41,12 @@ public class Task {
         this.state = state;
     }
     
+    public void makeCompleted() {
+        state = States.COMPLETED;
+    }  
 
     @Override
     public String toString() {
-        return String.format("%s %d.%d.%d %s\n", note, date.getDayOfMonth(), date.getMonth(), date.getYear(), state.getState());
+        return String.format("%s %d.%d.%d %s\n", note, date.getDayOfMonth(), date.getMonthValue() , date.getYear(), state.getState());
     }
 }

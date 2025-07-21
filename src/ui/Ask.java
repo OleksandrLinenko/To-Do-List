@@ -4,8 +4,8 @@
  */
 package ui;
 
-import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 /**
  *
@@ -18,24 +18,25 @@ public class Ask {
     public static Ask create() {
         return new Ask();
     }
-    
+
+    public String askString(String string) {
+        Message.create().show(string);
+        return sc.nextLine();
+    }
+
     public int askInt(String string) {
         Message.create().show(string);
         return sc.nextInt();
     }
-    
-    public String askPath() {
-        Message.create().show("Set path to file: ");
-        return sc.nextLine();
-    }
-    
-    public String askNote() {
-        Message.create().show("Write note text");
-        return sc.nextLine();
-    }
 
     public LocalDate askDate() {
-        Message.create().show("Set note's day, month and year: ");
-        return LocalDate.of(sc.nextInt(), sc.nextInt(), sc.nextInt());
+        Message.create().show("Set day, month and year: ");
+        int day = sc.nextInt();
+        int month = sc.nextInt();
+        int year = sc.nextInt();
+        if((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
+            throw new IllegalArgumentException("Invalid date");
+        }
+        return LocalDate.of(year, month, day);
     }
 }

@@ -23,14 +23,20 @@ public class Data {
     public void readData(String path) {
         try (BufferedReader br = new BufferedReader(new FileReader(new File(path)))) {
             String line;
+
             while ((line = br.readLine()) != null) {
+                if (line.trim().isEmpty()) {
+                    continue;
+                }
+                
                 String[] split = line.split(";");
-                String[] splitDate = split[0].split(".");
+                String[] splitDate = split[0].split("\\.");
                 LocalDate date = LocalDate.of(
-                        Integer.parseInt(splitDate[0].trim()),
+                        Integer.parseInt(splitDate[2].trim()),
                         Integer.parseInt(splitDate[1].trim()),
-                        Integer.parseInt(splitDate[2].trim())
+                        Integer.parseInt(splitDate[0].trim())
                 );
+                
                 States state;
                 if (split[2].equals("Completed")) {
                     state = States.COMPLETED;

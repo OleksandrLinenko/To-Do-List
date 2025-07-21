@@ -15,6 +15,6 @@ public class Message {
     }
 
     public void show(String string) {
-        System.out.print(String.format("%s\n", string));
+        System.out.print(string);
     }
 }

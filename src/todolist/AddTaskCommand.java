@@ -6,6 +6,8 @@ package todolist;
 
 import ui.Ask;
 
+
+
 /**
  *
  * @author oleksandrlinenko
@@ -17,6 +19,6 @@ public class AddTaskCommand {
     }
     
     public void handle() {
-        Application.getInstance().getTaskList().addTask(new Task(Ask.create().askNote(), States.UNCOMPLETED, Ask.create().askDate()));
+        Application.getInstance().getTaskList().addTask(new Task(Ask.create().askString("Set note: "), States.UNCOMPLETED, Ask.create().askDate()));
     }
 }

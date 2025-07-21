@@ -16,7 +16,6 @@ public class LoadListCommand {
     }
     
     public void handle() {
-        Application.getInstance().reset();
-        Data.create().readData(Ask.create().askPath());
+        Data.create().readData(Ask.create().askString("Set path: "));
     }
 }
