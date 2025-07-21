@@ -21,7 +21,7 @@ public class Ask {
 
     public String askString(String string) {
         Message.create().show(string);
-        return sc.nextLine();
+        return sc.next();
     }
 
     public int askInt(String string) {
@@ -36,8 +36,19 @@ public class Ask {
         int month = sc.nextInt();
         Message.create().show("Set year: ");
         int year = sc.nextInt();
-        if((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
+        boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        if ((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
             throw new IllegalArgumentException("Invalid date");
+        }
+        
+        if (isLeap) {
+            if (month == 2 && (day <= 0 || day > 29)) {
+                throw new IllegalArgumentException("Invalid date");
+            }
+        } else {
+            if (month == 2 && (day <= 0 || day > 28)) {
+                throw new IllegalArgumentException("Invalid date");
+            }
         }
         return LocalDate.of(year, month, day);
     }
