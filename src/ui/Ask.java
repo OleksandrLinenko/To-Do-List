@@ -30,9 +30,11 @@ public class Ask {
     }
 
     public LocalDate askDate() {
-        Message.create().show("Set day, month and year: ");
+        Message.create().show("Set day: ");
         int day = sc.nextInt();
+        Message.create().show("Set month: ");
         int month = sc.nextInt();
+        Message.create().show("Set year: ");
         int year = sc.nextInt();
         if((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
             throw new IllegalArgumentException("Invalid date");
