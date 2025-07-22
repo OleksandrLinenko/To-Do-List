@@ -17,6 +17,6 @@ public class SetTaskAsCompletedCommand {
     }
 
     public void handle() {
-        Application.getInstance().getTaskList().findTask(Ask.create().askString("Set note: "), Ask.create().askDate()).makeCompleted();
+        Application.getInstance().getTaskList().findTask(Ask.create().askInt("Set task id number: ")).makeCompleted();
     }
 }

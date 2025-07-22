@@ -1,11 +1,11 @@
-21.7.2025;Do my math homework;Completed
-21.7.2025;Do my chemistry homework;Uncompleted
-21.7.2025;Do my PE homework;Uncompleted
-21.7.2025;Do my English homework;Completed
-26.7.2025;Wash the dishes;Completed
-26.7.2025;Do PE test;Uncompleted
-26.7.2025;Water flowers;Uncompleted
-30.7.2025;Send money;Uncompleted
-30.7.2025;Walk the dog;Completed
-30.7.2025;Wash the window;Uncompleted
+123456;21.7.2025;Do my math homework;Completed
+789112;21.7.2025;Do my chemistry homework;Uncompleted
+434364;21.7.2025;Do my PE homework;Uncompleted
+111344;21.7.2025;Do my English homework;Completed
+665656;26.7.2025;Wash the dishes;Completed
+656323;26.7.2025;Do PE test;Uncompleted
+993254;26.7.2025;Water flowers;Uncompleted
+155454;30.7.2025;Send money;Uncompleted
+487901;30.7.2025;Walk the dog;Completed
+225467;30.7.2025;Wash the window;Uncompleted
 

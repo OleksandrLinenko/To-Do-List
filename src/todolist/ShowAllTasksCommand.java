@@ -15,7 +15,7 @@ public class ShowAllTasksCommand {
     public static ShowAllTasksCommand create() {
         return new ShowAllTasksCommand();
     }
-    
+
     public void handle() {
         ShowTasks.create().handle(Application.getInstance().getTaskList().getTasks(true));
     }

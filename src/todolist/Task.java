@@ -12,17 +12,23 @@ import java.time.LocalDate;
  */
 public class Task {
 
+    private int idNumber;
     private String note;
     private States state;
     private LocalDate date;
 
-    public Task(String note, States state, LocalDate date) {
-        if(note.isEmpty() || (state != States.COMPLETED && state != States.UNCOMPLETED) || date == null) {
+    public Task(int idNumber, String note, States state, LocalDate date) {
+        if (note.isEmpty() || date == null) {
             throw new IllegalArgumentException("Illegal argument");
         }
+        this.idNumber = idNumber;
         this.note = note;
         this.state = state;
         this.date = date;
+    }
+
+    public int getIdNumber() {
+        return idNumber;
     }
 
     public String getNote() {
@@ -40,13 +46,20 @@ public class Task {
     public void setState(States state) {
         this.state = state;
     }
-    
+
     public void makeCompleted() {
-        state = States.COMPLETED;
-    }  
+        try {
+            if (state.equals(States.COMPLETED)) {
+                throw new Exception("Selected task is already completed");
+            }
+            state = States.COMPLETED;
+        } catch (Exception ex) {
+            System.err.println("Error while changing task's state");
+        }
+    }
 
     @Override
     public String toString() {
-        return String.format("%s %d.%d.%d %s\n", note, date.getDayOfMonth(), date.getMonthValue() , date.getYear(), state.getState());
+        return String.format("%d %s %d.%d.%d %s\n", idNumber, note, date.getDayOfMonth(), date.getMonthValue(), date.getYear(), state.getState());
     }
 }

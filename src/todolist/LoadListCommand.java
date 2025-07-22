@@ -11,10 +11,11 @@ import ui.Ask;
  * @author oleksandrlinenko
  */
 public class LoadListCommand {
+
     public static LoadListCommand create() {
         return new LoadListCommand();
     }
-    
+
     public void handle() {
         Data.create().readData(Ask.create().askString("Set path: "));
     }

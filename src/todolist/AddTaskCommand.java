@@ -5,9 +5,8 @@
 package todolist;
 
 import java.time.LocalDate;
+import java.util.Random;
 import ui.Ask;
-
-
 
 /**
  *
@@ -18,10 +17,11 @@ public class AddTaskCommand {
     public static AddTaskCommand create() {
         return new AddTaskCommand();
     }
-    
+
     public void handle() {
         String note = Ask.create().askString("Set note: ");
         LocalDate date = Ask.create().askDate();
-        Application.getInstance().getTaskList().addTask(new Task(note, States.UNCOMPLETED, date));
+        Random random = new Random();
+        Application.getInstance().getTaskList().addTask(new Task(100000 + random.nextInt(900000), note, States.UNCOMPLETED, date));
     }
 }

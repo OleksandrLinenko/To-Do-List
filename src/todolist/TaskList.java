@@ -24,9 +24,9 @@ public class TaskList {
         tasks.add(task);
     }
 
-    public Task findTask(String note, LocalDate date) {
+    public Task findTask(int idNumber) {
         for (Task task : tasks) {
-            if (task.getNote().equals(note) || task.getDate() == date) {
+            if (task.getIdNumber() == idNumber) {
                 return task;
             }
         }

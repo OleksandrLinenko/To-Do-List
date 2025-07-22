@@ -21,7 +21,7 @@ public class Ask {
 
     public String askString(String string) {
         Message.create().show(string);
-        return sc.next(); 
+        return sc.next();
     }
 
     public int askInt(String string) {
@@ -40,7 +40,7 @@ public class Ask {
         if ((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
             throw new IllegalArgumentException("Invalid date");
         }
-        
+
         if (isLeap) {
             if (month == 2 && (day <= 0 || day > 29)) {
                 throw new IllegalArgumentException("Invalid date");

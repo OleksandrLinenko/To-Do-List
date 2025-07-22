@@ -28,22 +28,22 @@ public class Data {
                 if (line.trim().isEmpty()) {
                     continue;
                 }
-                
+
                 String[] split = line.split(";");
-                String[] splitDate = split[0].split("\\.");
+                String[] splitDate = split[1].split("\\.");
                 LocalDate date = LocalDate.of(
                         Integer.parseInt(splitDate[2].trim()),
                         Integer.parseInt(splitDate[1].trim()),
                         Integer.parseInt(splitDate[0].trim())
                 );
-                
+
                 States state;
-                if (split[2].equals("Completed")) {
+                if (split[3].equals("Completed")) {
                     state = States.COMPLETED;
                 } else {
                     state = States.UNCOMPLETED;
                 }
-                Application.getInstance().getTaskList().addTask(new Task(split[1], state, date));
+                Application.getInstance().getTaskList().addTask(new Task(Integer.parseInt(split[0]), split[2], state, date));
             }
         } catch (IOException ex) {
             System.err.println("Error while reading file");
