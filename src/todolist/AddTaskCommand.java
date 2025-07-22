@@ -4,6 +4,7 @@
  */
 package todolist;
 
+import java.time.LocalDate;
 import ui.Ask;
 
 
@@ -19,6 +20,8 @@ public class AddTaskCommand {
     }
     
     public void handle() {
-        Application.getInstance().getTaskList().addTask(new Task(Ask.create().askString("Set note: "), States.UNCOMPLETED, Ask.create().askDate()));
+        String note = Ask.create().askString("Set note: ");
+        LocalDate date = Ask.create().askDate();
+        Application.getInstance().getTaskList().addTask(new Task(note, States.UNCOMPLETED, date));
     }
 }
