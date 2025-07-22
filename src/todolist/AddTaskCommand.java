@@ -22,6 +22,6 @@ public class AddTaskCommand {
         String note = Ask.create().askString("Set note: ");
         LocalDate date = Ask.create().askDate();
         Random random = new Random();
-        Application.getInstance().getTaskList().addTask(new Task(100000 + random.nextInt(900000), note, States.UNCOMPLETED, date));
+        Application.getInstance().getTaskList().addTask(new Task(100000 + random.nextInt(900000), note, State.UNCOMPLETED, date));
     }
 }

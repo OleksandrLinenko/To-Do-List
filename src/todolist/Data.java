@@ -37,11 +37,11 @@ public class Data {
                         Integer.parseInt(splitDate[0].trim())
                 );
 
-                States state;
+                State state;
                 if (split[3].equals("Completed")) {
-                    state = States.COMPLETED;
+                    state = State.COMPLETED;
                 } else {
-                    state = States.UNCOMPLETED;
+                    state = State.UNCOMPLETED;
                 }
                 Application.getInstance().getTaskList().addTask(new Task(Integer.parseInt(split[0]), split[2], state, date));
             }

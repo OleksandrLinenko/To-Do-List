@@ -42,7 +42,7 @@ public class TaskList {
             }
         } else {
             for (Task task : tasks) {
-                if (task.getState() == States.UNCOMPLETED) {
+                if (task.getState() == State.UNCOMPLETED) {
                     result.add(task);
                 }
             }
@@ -61,7 +61,7 @@ public class TaskList {
             }
         } else {
             for (Task task : tasks) {
-                if (task.getDate().equals(date) && task.getState() == States.UNCOMPLETED) {
+                if (task.getDate().equals(date) && task.getState() == State.UNCOMPLETED) {
                     result.add(task);
                 }
             }

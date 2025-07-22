@@ -8,12 +8,12 @@ package todolist;
  *
  * @author oleksandrlinenko
  */
-public enum States {
+public enum State {
     COMPLETED("completed"), UNCOMPLETED("uncompleted");
 
     String state;
 
-    States(String state) {
+    State(String state) {
         this.state = state;
     }
 

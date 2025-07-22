@@ -14,10 +14,10 @@ public class Task {
 
     private int idNumber;
     private String note;
-    private States state;
+    private State state;
     private LocalDate date;
 
-    public Task(int idNumber, String note, States state, LocalDate date) {
+    public Task(int idNumber, String note, State state, LocalDate date) {
         if (note.isEmpty() || date == null) {
             throw new IllegalArgumentException("Illegal argument");
         }
@@ -35,7 +35,7 @@ public class Task {
         return note;
     }
 
-    public States getState() {
+    public State getState() {
         return state;
     }
 
@@ -43,16 +43,16 @@ public class Task {
         return date;
     }
 
-    public void setState(States state) {
+    public void setState(State state) {
         this.state = state;
     }
 
     public void makeCompleted() {
         try {
-            if (state.equals(States.COMPLETED)) {
+            if (state.equals(State.COMPLETED)) {
                 throw new Exception("Selected task is already completed");
             }
-            state = States.COMPLETED;
+            state = State.COMPLETED;
         } catch (Exception ex) {
             System.err.println("Error while changing task's state");
         }
