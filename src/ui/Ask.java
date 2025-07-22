@@ -21,7 +21,7 @@ public class Ask {
 
     public String askString(String string) {
         Message.create().show(string);
-        return sc.nextLine(); 
+        return sc.next(); 
     }
 
     public int askInt(String string) {
