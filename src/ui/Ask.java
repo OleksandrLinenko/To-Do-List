@@ -30,26 +30,38 @@ public class Ask {
     }
 
     public LocalDate askDate() {
-        Message.create().show("Set day: ");
-        int day = sc.nextInt();
-        Message.create().show("Set month: ");
-        int month = sc.nextInt();
-        Message.create().show("Set year: ");
-        int year = sc.nextInt();
-        boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
-        if ((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
-            throw new IllegalArgumentException("Invalid date");
-        }
+        boolean correct = false;
+        LocalDate date = null;
+        do {
+            try {
+                Message.create().show("Set day: ");
+                int day = sc.nextInt();
+                Message.create().show("Set month: ");
+                int month = sc.nextInt();
+                Message.create().show("Set year: ");
+                int year = sc.nextInt();
+                date = LocalDate.parse(String.format("%d-%02d-%02d", year, month, day));
+//                boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+//                if ((day <= 0 || day > 31) || (month <= 0 || month > 12) || (year > 2025)) {
+//                    throw new IllegalArgumentException("Invalid date");
+//                }
+//
+//                if (isLeap) {
+//                    if (month == 2 && (day <= 0 || day > 29)) {
+//                        throw new IllegalArgumentException("Invalid date");
+//                    }
+//                } else {
+//                    if (month == 2 && (day <= 0 || day > 28)) {
+//                        throw new IllegalArgumentException("Invalid date");
+//                    }
+//                }
+//                date = LocalDate.of(year, month, day);
+                correct = true;
+            } catch (Exception ex) {
+                System.err.println("Error: " + ex.getMessage());
+            }
+        } while (!correct);
 
-        if (isLeap) {
-            if (month == 2 && (day <= 0 || day > 29)) {
-                throw new IllegalArgumentException("Invalid date");
-            }
-        } else {
-            if (month == 2 && (day <= 0 || day > 28)) {
-                throw new IllegalArgumentException("Invalid date");
-            }
-        }
-        return LocalDate.of(year, month, day);
+        return date;
     }
 }
